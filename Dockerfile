@@ -1,6 +1,14 @@
 FROM debian:jessie
 MAINTAINER Peter Reuterås <peter@reuteras.net>
 
+# Config Postfix
+RUN echo mail > /etc/hostname; \
+    echo "postfix postfix/main_mailer_type string Internet site" > \
+        preseed.txt && \
+    echo "postfix postfix/mailname string mail.example.com" >> \
+        preseed.txt && \
+    debconf-set-selections preseed.txt
+
 ## Install tools and libraries
 RUN apt-get update -yqq && \
     apt-get install -yqq --no-install-recommends \
@@ -18,6 +26,7 @@ RUN apt-get update -yqq && \
         lighttpd \
         openssl \
         perl \
+        postfix \
         postgresql-client \
         ssl-cert \
         supervisor && \
