@@ -44,7 +44,7 @@ ENV PERL_CPANM_OPT -n
 
 RUN mkdir -p --mode=750 /opt/rt4 && \
     mkdir -p /tmp/rt && \
-    curl -SL https://download.bestpractical.com/pub/rt/release/rt.tar.gz | \
+    curl -SL https://download.bestpractical.com/pub/rt/release/rt-4.2.12.tar.gz | \
         tar -xzC /tmp/rt && \
     cd /tmp/rt/rt* && \
     echo "o conf init " | \
