@@ -1,6 +1,6 @@
 # docker-rt - 42ways fork
 
-[RT](https://www.bestpractical.com/rt/), or Request Tracker, is a issue tracking system. Will be built with the [current RT version](download from https://download.bestpractical.com/pub/rt/release/rt.tar.gz).
+[RT](https://www.bestpractical.com/rt/), or Request Tracker, is a issue tracking system. Will be built with the current RT version (download from https://download.bestpractical.com/pub/rt/release/rt.tar.gz).
 
 ## Features
 
