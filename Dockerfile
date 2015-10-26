@@ -1,5 +1,5 @@
-FROM debian:jessie
-MAINTAINER Peter Reuterås <peter@reuteras.net>
+FROM ubuntu
+MAINTAINER Thomas Herrmann <thomas@42ways.de>
 
 # Config Postfix
 RUN echo mail > /etc/hostname; \
@@ -27,7 +27,7 @@ RUN apt-get update -yqq && \
         openssl \
         perl \
         postfix \
-        postgresql-client \
+        mysql-client \
         ssl-cert \
         supervisor && \
     apt-get clean && \
