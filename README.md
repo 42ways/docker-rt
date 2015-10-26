@@ -1,10 +1,14 @@
-# docker-rt
+# docker-rt - 42ways fork
 
-[RT](https://www.bestpractical.com/rt/), or Request Tracker, is a issue tracking system. Currently build with RT 4.2.12.
+[RT](https://www.bestpractical.com/rt/), or Request Tracker, is a issue tracking system. Will be built with the [current RT version](download from https://download.bestpractical.com/pub/rt/release/rt.tar.gz).
 
 ## Features
 
-In this first build this container makes some assuptions that might not be for everyone. The database used is Postgresql. You have to use SSL and add the following files at startup:
+This Docker spec changes some of the main assumptions of the [forked version](https://github.com/reuteras/docker-rt).
+
+The operating system is Ubuntu. The database used is MySQL.
+
+You have to use SSL and add the following files at startup:
 
 * RT_SiteConfig.pm
 * server-chain.pem
