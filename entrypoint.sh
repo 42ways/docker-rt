@@ -26,6 +26,9 @@ fi
 
 sed -i -e "s=HOSTNAME=$RT_HOSTNAME=" /etc/lighttpd/conf-available/89-rt.conf
 
+cat /data/rt-aliases >> /etc/aliases
+newaliases
+
 cat >> /opt/postfix.sh <<EOF
 #!/bin/bash
 service postfix start

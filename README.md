@@ -13,6 +13,7 @@ You have to use SSL and add the following files at startup:
 * RT_SiteConfig.pm
 * server-chain.pem
 * server.pem
+* rt-aliases (will be appended to /etc/aliases to specify rt-mailgate adresses)
 
 ## Usage
 
