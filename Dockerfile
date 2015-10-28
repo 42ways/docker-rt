@@ -2,10 +2,10 @@ FROM ubuntu
 MAINTAINER Thomas Herrmann <thomas@42ways.de>
 
 # Config Postfix
-RUN echo rt > /etc/hostname; \
+RUN echo mail > /etc/hostname; \
     echo "postfix postfix/main_mailer_type string Internet site" > \
         preseed.txt && \
-    echo "postfix postfix/mailname string rt.teleteach.de" >> \
+    echo "postfix postfix/mailname string mail.example.com" >> \
         preseed.txt && \
     debconf-set-selections preseed.txt
 
@@ -57,7 +57,7 @@ RUN mkdir -p --mode=750 /opt/rt4 && \
         --with-bin-owner=rt-service \
         --with-libs-owner=rt-service \
         --with-libs-group=www-data \
-        --with-db-type=Pg \
+        --with-db-type=mysql \
         --with-web-user=www-data \
         --with-web-group=www-data \
         --prefix=/opt/rt4 \
