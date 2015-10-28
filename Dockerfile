@@ -2,10 +2,10 @@ FROM ubuntu
 MAINTAINER Thomas Herrmann <thomas@42ways.de>
 
 # Config Postfix
-RUN echo mail > /etc/hostname; \
+RUN echo rt > /etc/hostname; \
     echo "postfix postfix/main_mailer_type string Internet site" > \
         preseed.txt && \
-    echo "postfix postfix/mailname string mail.example.com" >> \
+    echo "postfix postfix/mailname string rt.teleteach.de" >> \
         preseed.txt && \
     debconf-set-selections preseed.txt
 
