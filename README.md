@@ -11,15 +11,13 @@ The operating system is Ubuntu. The database used is MySQL.
 You have to use SSL and add the following files at startup:
 
 * RT_SiteConfig.pm
-* server-chain.pem
-* server.pem
 * rt-aliases (will be appended to /etc/aliases to specify rt-mailgate adresses)
 
 ## Usage
 
 To run docker-rt (change to your full path to files specified above):
 
-        docker run -ti -p 443:443 -e RT_HOSTNAME=rt.example.com -e RT_RELAYHOST=mail.example.com -v /<full path>/docker-rt/files:/data --name rt -d 42ways/docker-rt
+        docker run -ti -p 80:80 -e RT_HOSTNAME=rt.example.com -e RT_RELAYHOST=mail.example.com -v /<full path>/docker-rt/files:/data --name rt -d 42ways/docker-rt
 
 * `-e RT_HOSTNAME=<RT server hostname>`
 * `-e RT_RELAYHOST=<Postfix relay host>`

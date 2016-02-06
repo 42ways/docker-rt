@@ -22,13 +22,10 @@ RUN apt-get update -yqq && \
         libexpat1-dev \
         libpq-dev \
         libgd-dev \
-        libssl-dev \
         lighttpd \
-        openssl \
         perl \
         postfix \
         mysql-client \
-        ssl-cert \
         supervisor && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/
@@ -82,16 +79,15 @@ COPY 89-rt.conf /etc/lighttpd/conf-available/89-rt.conf
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 RUN chmod +x /entrypoint.sh && \
-    sed -i '6 a ssl.ca-file = "/etc/lighttpd/server-chain.pem"' \
-        /etc/lighttpd/conf-available/10-ssl.conf && \
     /usr/sbin/lighty-enable-mod rt && \
-    /usr/sbin/lighty-enable-mod ssl && \
     chmod 770 /opt/rt4/etc && \
     chmod 660 /opt/rt4/etc/RT_SiteConfig.pm && \
     chown rt-service:www-data /opt/rt4/var && \
     chmod 0770 /opt/rt4/var
 
-EXPOSE 443
+EXPOSE 80
+
+VOLUME /data
 
 ENTRYPOINT ["/entrypoint.sh"]
 
