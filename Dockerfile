@@ -86,6 +86,7 @@ RUN chmod +x /entrypoint.sh && \
     chmod 0770 /opt/rt4/var
 
 EXPOSE 80
+EXPOSE 25
 
 VOLUME /data
 
