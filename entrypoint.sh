@@ -37,7 +37,7 @@ EOF
 chmod +x /opt/postfix.sh
 
 postconf -e myhostname=$RT_HOSTNAME
-postconf -e inet_interfaces=loopback-only
+postconf -e inet_interfaces=all
 postconf -e inet_protocols=ipv4
 postconf -e mydestination=$RT_HOSTNAME,localhost
 postconf -e myhostname=$RT_HOSTNAME
