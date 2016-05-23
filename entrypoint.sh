@@ -41,7 +41,7 @@ postconf -e inet_interfaces=loopback-only
 postconf -e inet_protocols=ipv4
 postconf -e mydestination=$RT_HOSTNAME,localhost
 postconf -e myhostname=$RT_HOSTNAME
-postconf -e mynetworks=127.0.0.0/8
+postconf -e mynetworks=0.0.0.0/0
 postconf -e relayhost=$RT_RELAYHOST
 
 exec "$@"
