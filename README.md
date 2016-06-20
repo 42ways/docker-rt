@@ -39,5 +39,4 @@ To upgrade the database, use the script sbin/rt-setup-database in the container,
 ## TODO
 Lots of things.
 
-* Update README with information on how to init and update the database
 * Solution for adding plugins
