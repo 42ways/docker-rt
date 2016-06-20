@@ -28,6 +28,14 @@ To run docker-rt (change to your full path to files specified above):
 * `-e RT_HOSTNAME=<RT server hostname>`
 * `-e RT_RELAYHOST=<Postfix relay host>`
 
+## Database upgrade
+
+To upgrade the database, use the script sbin/rt-setup-database in the container, i. e.
+
+* execute a shell in the container (docker exec -it <containername> /bin/bash)
+* cd to /opt/rt4
+* invoke the database update script (perl sbin/rt-setup-database --action upgrade)
+
 ## TODO
 Lots of things.
 
