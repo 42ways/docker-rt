@@ -40,7 +40,7 @@ RUN groupadd -r rt-service && \
 ENV RT_FIX_DEPS_CMD /usr/bin/cpanm
 ENV PERL_CPANM_OPT -n
 
-RUN mkdir -p --mode=750 /opt/rt4 && \
+RUN mkdir -p --mode=750 /opt/rt4/var/data/RT-Shredder && \
     mkdir -p /tmp/rt && \
     curl -SL https://download.bestpractical.com/pub/rt/release/rt.tar.gz | \
         tar -xzC /tmp/rt && \
