@@ -23,6 +23,10 @@ if [[ -z  "$RT_RELAYHOST" ]]; then
 fi
 
 sed -i -e "s=HOSTNAME=$RT_HOSTNAME=" /etc/lighttpd/conf-available/89-rt.conf
+if [ -r /data/rt.conf ]
+then
+    cp /data/rt.conf /etc/lighttpd/conf-available/89-rt.conf
+fi
 
 cat /data/rt-aliases >> /etc/aliases
 newaliases
