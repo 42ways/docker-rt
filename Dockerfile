@@ -83,7 +83,7 @@ RUN chmod +x /entrypoint.sh && \
     /usr/sbin/lighty-enable-mod rt && \
     chmod 770 /opt/rt4/etc && \
     chmod 660 /opt/rt4/etc/RT_SiteConfig.pm && \
-    chown rt-service:www-data /opt/rt4/var && \
+    chown -R rt-service:www-data /opt/rt4/var && \
     chmod 0770 /opt/rt4/var
 
 EXPOSE 80
