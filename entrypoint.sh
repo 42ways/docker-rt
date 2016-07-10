@@ -17,6 +17,16 @@ if [[ -z  "$RT_HOSTNAME" ]]; then
     exit 1
 fi
 
+if [[ -z  "$DOCKER_HOSTNAME" ]]; then
+    echo >&2 "You must specify DOCKER_HOSTNAME."
+    exit 1
+fi
+
+if [[ -z  "$RT_MAILNAME" ]]; then
+    echo >&2 "You must specify RT_MAILNAME."
+    exit 1
+fi
+
 if [[ -z  "$RT_RELAYHOST" ]]; then
     echo >&2 "You must specify RT_RELAYHOST."
     exit 1
@@ -43,7 +53,7 @@ chmod +x /opt/postfix.sh
 postconf -e myhostname=$RT_HOSTNAME
 postconf -e inet_interfaces=all
 postconf -e inet_protocols=ipv4
-postconf -e mydestination=$RT_HOSTNAME,$DOCKER_HOSTNAME,localhost
+postconf -e mydestination=$RT_MAILNAME,$RT_HOSTNAME,$DOCKER_HOSTNAME,localhost
 postconf -e mynetworks=0.0.0.0/0
 postconf -e relayhost=$RT_RELAYHOST
 
