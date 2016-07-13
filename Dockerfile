@@ -40,7 +40,7 @@ RUN groupadd -r rt-service && \
 ENV RT_FIX_DEPS_CMD /usr/bin/cpanm
 ENV PERL_CPANM_OPT -n
 
-RUN mkdir -p --mode=750 /opt/rt4/var/data/RT-Shredder && \
+RUN mkdir -p --mode=770 /opt/rt4/var/data/RT-Shredder && \
     mkdir -p /tmp/rt && \
     curl -SL https://download.bestpractical.com/pub/rt/release/rt.tar.gz | \
         tar -xzC /tmp/rt && \
@@ -85,7 +85,7 @@ RUN chmod +x /entrypoint.sh && \
     chmod 660 /opt/rt4/etc/RT_SiteConfig.pm && \
     chown -R rt-service:www-data /opt/rt4/var && \
     chown -R www-data:www-data /opt/rt4/var/data && \
-    chmod 0770 /opt/rt4/var /opt/rt4/var/log /opt/rt4/var/data /opt/rt4/var/data/RT-Shredder
+    chmod 770 /opt/rt4/var /opt/rt4/var/log /opt/rt4/var/data /opt/rt4/var/data/RT-Shredder
 
 EXPOSE 80
 EXPOSE 25
