@@ -38,10 +38,16 @@ then
     cp /data/rt.conf /etc/lighttpd/conf-available/89-rt.conf
 fi
 
+if [ -f /etc/aliases.dist ]
+then
+    cp /etc/aliases.dist /etc/aliases
+else
+    cp /etc/aliases /etc/aliases.dist
+fi
 cat /data/rt-aliases >> /etc/aliases
 newaliases
 
-cat >> /opt/postfix.sh <<EOF
+cat > /opt/postfix.sh <<EOF
 #!/bin/bash
 service postfix start
 touch /var/log/mail.log
