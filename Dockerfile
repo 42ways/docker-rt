@@ -27,6 +27,7 @@ RUN apt-get update -yqq && \
         postfix \
         mysql-client \
         libmysqlclient-dev \
+        tzdata \
         supervisor && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/
