@@ -86,7 +86,7 @@ RUN chmod +x /entrypoint.sh && \
     chmod 660 /opt/rt4/etc/RT_SiteConfig.pm && \
     chown -R rt-service:www-data /opt/rt4/var && \
     chown -R www-data:www-data /opt/rt4/var/data && \
-    chmod 770 /opt/rt4/var /opt/rt4/var/log /opt/rt4/var/data /opt/rt4/var/data/RT-Shredder
+    chmod 775 /opt/rt4/var /opt/rt4/var/log /opt/rt4/var/data /opt/rt4/var/data/RT-Shredder
 
 EXPOSE 80
 EXPOSE 25
