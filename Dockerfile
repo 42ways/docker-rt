@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:16.04
 MAINTAINER Thomas Herrmann <thomas@42ways.de>
 
 # Config Postfix
