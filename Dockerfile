@@ -21,6 +21,7 @@ RUN apt-get update -yqq && \
         cpanminus \
         curl \
         git \
+        vim \
         gpgv2 \
         graphviz \
         libexpat1-dev \
