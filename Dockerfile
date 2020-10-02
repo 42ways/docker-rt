@@ -1,6 +1,10 @@
 FROM ubuntu:16.04
 MAINTAINER Thomas Herrmann <thomas@42ways.de>
 
+ENV TZ=Europe/Berlin
+ENV DEBIAN_FRONTEND=noninteractive
+ENV RT_VERSION=4.4.4
+
 # Config Postfix
 RUN echo mail > /etc/hostname; \
     echo "postfix postfix/main_mailer_type string Internet site" > \
@@ -43,7 +47,7 @@ ENV PERL_CPANM_OPT -n
 
 RUN mkdir -p --mode=770 /opt/rt4/var/data/RT-Shredder && \
     mkdir -p /tmp/rt && \
-    curl -SL https://download.bestpractical.com/pub/rt/release/rt.tar.gz | \
+    curl -SL https://download.bestpractical.com/pub/rt/release/rt-${RT_VERSION}.tar.gz | \
         tar -xzC /tmp/rt && \
     cd /tmp/rt/rt* && \
     echo "o conf init " | \
